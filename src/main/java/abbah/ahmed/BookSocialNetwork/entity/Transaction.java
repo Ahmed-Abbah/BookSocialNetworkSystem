@@ -23,5 +23,4 @@ public class Transaction {
     private String review;
     @Column
     private String rating;
-
 }

@@ -20,5 +20,5 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name="user_id")
-    private List<>
+    private User user;
 }
