@@ -1,12 +1,15 @@
 package abbah.ahmed.BookSocialNetwork.repository;
 
 
-import abbah.ahmed.BookSocialNetwork.entity.Book;
+
+import abbah.ahmed.BookSocialNetwork.entity.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
+
+
 @Repository
-public interface BookRepository extends JpaRepository<Long,Book> {
+public interface EventRepository extends JpaRepository<Event,Long> {
 
 }

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.context.annotation.Primary;
 
+import java.util.List;
+
 @Entity
 @Data
 public class User {
@@ -20,5 +22,7 @@ public class User {
     private String password;
     @Column
     private String email;
-
+    @OneToMany
+    @JoinColumn(name="event_id")
+    private List<Event> events;
 }
