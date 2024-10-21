@@ -22,6 +22,7 @@ public class User {
     private String password;
     @Column
     private String email;
+
     @OneToMany
     @JoinColumn(name="event_id")
     private List<Event> events;

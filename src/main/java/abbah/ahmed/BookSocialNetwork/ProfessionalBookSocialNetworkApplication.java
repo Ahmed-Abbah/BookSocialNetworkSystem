@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProfessionalBookSocialNetworkApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ProfessionalBookSocialNetworkApplication.class, args);
 	}
 

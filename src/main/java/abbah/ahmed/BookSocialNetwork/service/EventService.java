@@ -28,9 +28,7 @@ public class EventService {
         return this.eventRepository.findAll();
     }
 
-    public Event updateEvent(Event newEvent){
-        return this.eventRepository.save(newEvent);
-    }
+
 
     public void deleteEvent(Long id){
         Event foundEvent = this.getEvent(id);

@@ -36,17 +36,22 @@ public class EventController {
         return new ResponseEntity<>(event,HttpStatus.CREATED);
     }
 
-    @PatchMapping("")
+    @PatchMapping("/{id}")
     public ResponseEntity<Event> updateEvent(@PathVariable Long id,@RequestBody Event event){
-        Event newEvent = Event.builder()
-                .id(id)
-                .date(event.getDate())
-                .location(event.getLocation())
-                .capacity(event.getCapacity())
-                .title(event.getTitle())
-                .build();
-        this.eventService.saveEvent(event);
-        return new ResponseEntity<>(event,HttpStatus.CREATED);
+        Event existingEvent = this.eventService.getEvent(id);
+        if(existingEvent!=null){
+            Event newEvent = Event.builder()
+                    .id(id)
+                    .date(event.getDate())
+                    .location(event.getLocation())
+                    .capacity(event.getCapacity())
+                    .title(event.getTitle())
+                    .build();
+            this.eventService.saveEvent(newEvent);
+            return new ResponseEntity<>(newEvent,HttpStatus.CREATED);
+        }else{
+            return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @DeleteMapping("/{id}")

@@ -1,12 +1,16 @@
 package abbah.ahmed.BookSocialNetwork.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +29,4 @@ public class Event {
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
-
-
 }
